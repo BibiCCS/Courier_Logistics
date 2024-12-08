@@ -1,0 +1,14 @@
+asgiref==3.8.1
+Django==4.2
+greenlet==3.1.1
+mysql-connector-python==9.0.0
+mysqlclient==2.2.4
+pygame==2.6.1
+PySide6==6.8.0.1
+PySide6_Addons==6.8.0.1
+PySide6_Essentials==6.8.0.1
+shiboken6==6.8.0.1
+SQLAlchemy==2.0.35
+sqlparse==0.5.1
+typing_extensions==4.12.2
+tzdata==2024.2
