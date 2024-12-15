@@ -7,6 +7,7 @@ from viewer.views import (
     CourierListView, CourierDetailView, CourierCreateView, CourierUpdateView, CourierDeleteView,
     DashBoardView,
     CountyListView, CountyDetailView, CountyCreateView, CountyUpdateView, CountyDeleteView,
+    MicrozonesTemplateView
 )
 
 
@@ -16,6 +17,9 @@ urlpatterns = [
 
     # ----Dashboard Page----
     path('dashboard/', DashBoardView.as_view(), name='dashboard'),
+
+    # ----Microzones----
+    path('microzones/', MicrozonesTemplateView.as_view(), name='microzones'),
 
     # ----County----
     path('county/', CountyListView.as_view(), name='county-list'),

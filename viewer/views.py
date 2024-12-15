@@ -3,7 +3,9 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from viewer.models import County, City, Neighborhood, Street, Courier
+from viewer.models import County, City, Neighborhood, Street, Courier, Microzones
+
+
 
 
 # ----Home Views----
@@ -15,6 +17,12 @@ def home(request):
 class DashBoardView(LoginRequiredMixin, TemplateView):
     template_name = 'dashboard.html'
     login_url = '/admin/login/'
+
+
+# ----Microzones----
+class MicrozonesTemplateView(LoginRequiredMixin, TemplateView):
+    model = Microzones
+    template_name = 'microzones.html'
 
 
 # ----County Views---- #

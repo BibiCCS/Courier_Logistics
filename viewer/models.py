@@ -4,16 +4,24 @@ from django.db.models import CharField, Model, ForeignKey, DO_NOTHING, IntegerFi
 
 # Create your models here.
 
-class County(Model):
-    name = models.CharField(max_length=128)
+
+class Microzones(Model):
+    name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
 
+class County(Model):
+    name = models.CharField(max_length=128)
+    microzones = models.ForeignKey(Microzones, on_delete=DO_NOTHING, related_name='microzones', blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
 class City(Model):
     name = CharField(max_length=128)
-    county = models.ForeignKey(County, on_delete=models.CASCADE, related_name='cities')
+    county = models.ForeignKey(County, on_delete=CASCADE, related_name='cities')
 
 
     def __str__(self):
