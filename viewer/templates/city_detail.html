@@ -3,6 +3,8 @@
 {% block content %}
 <h2>City Details</h2>
 <p><strong>Name:</strong> {{ city.name }}</p>
+{% if perms.viewer.change_city and delete_city %}
 <a class="btn btn-warning" href="{% url 'city-edit' city.id %}">Edit</a>
 <a class="btn btn-danger" href="{% url 'city-delete' city.id %}">Delete</a>
+{% endif %}
 {% endblock %}

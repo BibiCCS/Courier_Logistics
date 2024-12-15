@@ -4,6 +4,8 @@
 <h2>Neighborhood Details</h2>
 <p><strong>Name:</strong> {{ neighborhood.name }}</p>
 <p><strong>City:</strong> {{ neighborhood.city.name }}</p>
+{% if perms.viewer.change_neighborhood and delete_neighborhood %}
 <a class="btn btn-warning" href="{% url 'neighborhood-edit' neighborhood.id %}">Edit</a>
 <a class="btn btn-danger" href="{% url 'neighborhood-delete' neighborhood.id %}">Delete</a>
+{% endif %}
 {% endblock %}

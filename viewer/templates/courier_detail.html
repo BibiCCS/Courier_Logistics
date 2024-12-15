@@ -4,6 +4,8 @@
 <h2>Courier Details</h2>
 <p><strong>Name:</strong> {{ courier.name }}</p>
 <p><strong>Neighborhood:</strong> {{ courier.neighborhood.name }}</p>
+{% if perms.viewer.change_courier and delete_courier %}
 <a class="btn btn-warning" href="{% url 'courier-edit' courier.id %}">Edit</a>
 <a class="btn btn-danger" href="{% url 'courier-delete' courier.id %}">Delete</a>
+{% endif %}
 {% endblock %}

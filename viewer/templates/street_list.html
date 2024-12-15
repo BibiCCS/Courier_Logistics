@@ -6,10 +6,14 @@
     {% for street in streets %}
     <li class="list-group-item">
         <a href="{% url 'street-detail' street.id %}">{{ street.name }}</a> ({{ street.neighborhood.name }})
+        {% if perms.viewer.change_street and delete_street %}
         <a class="btn btn-warning" href="{% url 'street-edit' street.id %}">Edit</a>
         <a class="btn btn-danger" href="{% url 'street-delete' street.id %}">Delete</a>
+        {% endif %}
     </li>
     {% endfor %}
 </ul>
+{% if perms.viewer.add_street %}
 <a class="btn btn-primary mt-3" href="{% url 'street-add' %}">Add New Street</a>
+{% endif %}
 {% endblock %}

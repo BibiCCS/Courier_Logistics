@@ -18,6 +18,9 @@ urlpatterns = [
     # ----Dashboard Page----
     path('dashboard/', DashBoardView.as_view(), name='dashboard'),
 
+    # ----Search Courier----
+    path('search/', views.search_courier, name='search-courier'),
+
     # ----Microzones----
     path('microzones/', MicrozonesTemplateView.as_view(), name='microzones'),
 

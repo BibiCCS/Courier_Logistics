@@ -6,10 +6,14 @@
     {% for city in cities %}
     <li class="list-group-item">
         <a href="{% url 'city-detail' city.id %}">{{ city.name }}</a>
+        {% if perms.viewer.change_city and delete_city %}
         <a class="btn btn-warning" href="{% url 'city-edit' city.id %}">Edit</a>
         <a class="btn btn-danger" href="{% url 'city-delete' city.id %}">Delete</a>
+        {% endif %}
     </li>
     {% endfor %}
 </ul>
+{% if perms.viewer.add_city %}
 <a class="btn btn-primary mt-3" href="{% url 'city-add' %}">Add New City</a>
+{% endif %}
 {% endblock %}

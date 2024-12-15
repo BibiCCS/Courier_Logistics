@@ -5,6 +5,8 @@
 <p><strong>Name:</strong> {{ street.name }}</p>
 <p><strong>Number:</strong> {{ street.number }}</p>
 <p><strong>Neighborhood:</strong> {{ street.neighborhood.name }}</p>
+{% if perms.viewer.change_street and delete_street %}
 <a class="btn btn-warning" href="{% url 'street-edit' street.id %}">Edit</a>
 <a class="btn btn-danger" href="{% url 'street-delete' street.id %}">Delete</a>
+{% endif %}
 {% endblock %}
