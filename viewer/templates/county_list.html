@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>County List</h2>
+<ul class="list-group">
+    {% for county in counties %}
+    <li class="list-group-item">
+        <a href="{% url 'county-detail' county.id %}">{{ county.name }}</a>
+        <a class="btn btn-warning" href="{% url 'county-edit' county.id %}">Edit</a>
+        <a class="btn btn-danger" href="{% url 'county-delete' county.id %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+<a class="btn btn-primary mt-3" href="{% url 'county-add' %}">Add New County</a>
+{% endblock %}

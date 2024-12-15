@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Street List</h2>
+<ul class="list-group">
+    {% for street in streets %}
+    <li class="list-group-item">
+        <a href="{% url 'street-detail' street.id %}">{{ street.name }}</a> ({{ street.neighborhood.name }})
+        <a class="btn btn-warning" href="{% url 'street-edit' street.id %}">Edit</a>
+        <a class="btn btn-danger" href="{% url 'street-delete' street.id %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+<a class="btn btn-primary mt-3" href="{% url 'street-add' %}">Add New Street</a>
+{% endblock %}

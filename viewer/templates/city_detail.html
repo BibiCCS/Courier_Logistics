@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>City Details</h2>
+<p><strong>Name:</strong> {{ city.name }}</p>
+<a class="btn btn-warning" href="{% url 'city-edit' city.id %}">Edit</a>
+<a class="btn btn-danger" href="{% url 'city-delete' city.id %}">Delete</a>
+{% endblock %}

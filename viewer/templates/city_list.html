@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>City List</h2>
+<ul class="list-group">
+    {% for city in cities %}
+    <li class="list-group-item">
+        <a href="{% url 'city-detail' city.id %}">{{ city.name }}</a>
+        <a class="btn btn-warning" href="{% url 'city-edit' city.id %}">Edit</a>
+        <a class="btn btn-danger" href="{% url 'city-delete' city.id %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+<a class="btn btn-primary mt-3" href="{% url 'city-add' %}">Add New City</a>
+{% endblock %}

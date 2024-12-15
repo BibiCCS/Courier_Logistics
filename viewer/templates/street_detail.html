@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Street Details</h2>
+<p><strong>Name:</strong> {{ street.name }}</p>
+<p><strong>Number:</strong> {{ street.number }}</p>
+<p><strong>Neighborhood:</strong> {{ street.neighborhood.name }}</p>
+<a class="btn btn-warning" href="{% url 'street-edit' street.id %}">Edit</a>
+<a class="btn btn-danger" href="{% url 'street-delete' street.id %}">Delete</a>
+{% endblock %}

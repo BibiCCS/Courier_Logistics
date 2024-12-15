@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Courier List</h2>
+<ul class="list-group">
+    {% for courier in couriers %}
+    <li class="list-group-item">
+        <a href="{% url 'courier-detail' courier.id %}">{{ courier.name }}</a> ({{ courier.neighborhood.name }})
+        <a class="btn btn-warning" href="{% url 'courier-edit' courier.id %}">Edit</a>
+        <a class="btn btn-danger" href="{% url 'courier-delete' courier.id %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+<a class="btn btn-primary mt-3" href="{% url 'courier-add' %}">Add New Courier</a>
+{% endblock %}
