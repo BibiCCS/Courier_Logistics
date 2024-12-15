@@ -32,6 +32,9 @@
                 <ul class="navbar-nav ms-auto">
                     {%if user.is_authenticated%}
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'microzones' %}">MicroZone</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'county-list' %}">Counties</a>
                     </li>
                     <li class="nav-item">
