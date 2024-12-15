@@ -1,4 +1,4 @@
-### JavaScript
+# JavaScript
 /**
  * @license
  * Copyright 2019 Google LLC. All Rights Reserved.
@@ -19,13 +19,13 @@ function initMap() {
     { lat: 45.638217203132804, lng: 25.626241719512983 },
 	{ lat: 45.638078690227154, lng: 25.625930462534942 },
 	{ lat: 45.63622568281328, lng: 25.625803585438057 },
-	{ lat: 45.63517580696557, lng: 25.62384280447033 },
+   { lat: 45.63517580696557, lng: 25.62384280447033 }
 
   ];
   // Construct the polygon.
   const agentBerzei = new google.maps.Polygon({
     paths: polygonCoords,
-    strokeColor: "#FF0000",
+    strokeColor: "#6461bf",
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: "#FF0000",
